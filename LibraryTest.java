@@ -51,10 +51,34 @@ public class LibraryTest{
     mitchell.addStock(hobbit);
     mitchell.addStock(fishnet);
     mitchell.addStock(treasureIsland);
+    // mitchell.addStock(catInHat);
+    assertEquals(true, mitchell.isFull());
+  }
+
+  @Test 
+  public void checkIfLibraryIsUnderCapacity(){
+    mitchell.addStock(trainspotting);
+    mitchell.addStock(crash);
+    mitchell.addStock(hobbit);
+    mitchell.addStock(fishnet);
+    // mitchell.addStock(treasureIsland);
+    // mitchell.addStock(catInHat);
+    assertEquals(false, mitchell.isFull());
+  }
+
+  @Test 
+  public void checkIfStockStopsAdding(){
+    mitchell.addStock(trainspotting);
+    mitchell.addStock(crash);
+    mitchell.addStock(hobbit);
+    mitchell.addStock(fishnet);
+    mitchell.addStock(treasureIsland);
+    mitchell.addStock(catInHat);
+    mitchell.addStock(catInHat);
+    mitchell.addStock(catInHat);
     mitchell.addStock(catInHat);
     assertEquals(5, mitchell.stockCount());
   }
-
 
 // Test Book class - 
 
@@ -75,4 +99,6 @@ public class LibraryTest{
   public void getReaderName(){
     assertEquals("Michaela", reader.getName());
   }
+
+
 }
